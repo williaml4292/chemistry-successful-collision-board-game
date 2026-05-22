@@ -50,7 +50,7 @@
                     desc: "desc2",
                     x: 250,
                     y: 500,
-                    space: 2
+                    space: 2,
                 },
                 {
                     name:'space3',
@@ -58,18 +58,24 @@
                     x: 400,
                     y: 500,
                     space: 3,
-                }
+                },
             ]
             function mousePressed(){
                 var spaces = round(random(5))
                 alert("You rolled a " + spaces + "!")
                 currentSpace += spaces
-                spaces.forEach(function(space){
-                    if (currentSpace == space.space){
-                        thePlayer.x = space.x
-                        thePlayer.y = space.y
+                for (var i = 0;i < spaces.length;i++){
+                    if (currentSpace == spaces[i].x){
+                        thePlayer.x = spaces[i].x
+                        thePlayer.y = spaces[i].y
                     }
-                })
+                }
+                // spaces.forEach(function(space){
+                //     if (currentSpace == space.space){
+                //         thePlayer.x = space.x
+                //         thePlayer.y = space.y
+                //     }
+                // })
             }
             function setup() {
                 var theCanvas = createCanvas(800, 600);
