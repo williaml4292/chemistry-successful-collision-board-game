@@ -37,7 +37,7 @@
             var turn = 0;
             var thePlayer
             var currentSpace = 1;
-            var spaces = [
+            var gameSpaces = [
                 {
                     name:"spawn",
                     desc: "You've reached spawn!",
@@ -65,11 +65,12 @@
                 alert("You rolled a " + spaces + "!")
                 currentSpace += spaces
                 for (var i = 0;i < spaces.length;i++){
-                    if (currentSpace == spaces[i].x){
+                    if (currentSpace == spaces[i].space){
                         thePlayer.x = spaces[i].x
                         thePlayer.y = spaces[i].y
                     }
                 }
+                console.log(spaces[0].space)
                 // spaces.forEach(function(space){
                 //     if (currentSpace == space.space){
                 //         thePlayer.x = space.x
