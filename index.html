@@ -16,7 +16,7 @@
         <div style = "display: flex">
             <div id = "canvas"></div>
             <div>
-                <h1>Click</h1>
+                <h1>Click to roll a dice.</h1>
             </div>
         </div>
         <!-- HTML -->
@@ -24,16 +24,32 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js"></script>
         <script>
             // JS
+            class player{
+                constructor(x,y){
+                    this.x = x
+                    this.y = y
+                }
+                make(){
+                    fill(255,20,20)
+                    rect(this.x,this.y,100)
+                }
+            }
             var turn = 0;
+            var thePlayer = []
             function mousePressed(){
-
+                var spaces = round(random(5))
+                alert("You rolled a " + spaces + "!")
             }
             function setup() {
                 var theCanvas = createCanvas(800, 600);
                 theCanvas.parent("canvas")
+                rectMode(CENTER)
+                thePlayer = new player(50,350)
             }
 
             function draw() {
+                background(200)
+                thePlayer.make
             }
 
         </script>
