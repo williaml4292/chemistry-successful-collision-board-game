@@ -31,11 +31,21 @@
                 }
                 make(){
                     fill(255,20,20)
-                    rect(this.x,this.y,100)
+                    rect(this.x,this.y,50)
                 }
             }
             var turn = 0;
-            var thePlayer = []
+            var thePlayer
+            var spaces = [
+                {
+                    name: 'space1',
+                    desc: "desc1",
+                },
+                {
+                    name:'space2',
+                    desc:'desc2'
+                }
+            ]
             function mousePressed(){
                 var spaces = round(random(5))
                 alert("You rolled a " + spaces + "!")
@@ -44,12 +54,12 @@
                 var theCanvas = createCanvas(800, 600);
                 theCanvas.parent("canvas")
                 rectMode(CENTER)
-                thePlayer = new player(50,350)
+                thePlayer = new player(100,500)
             }
 
             function draw() {
                 background(200)
-                thePlayer.make
+                thePlayer.make()
             }
 
         </script>
