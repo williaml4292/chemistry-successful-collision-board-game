@@ -41,14 +41,14 @@
                 {
                     name:"spawn",
                     desc: "You've reached spawn!",
-                    x: 100,
-                    y:500,
+                    x: 133,
+                    y: 500,
                     space: 1,
                 },
                 {
                     name: 'space2',
                     desc: "desc2",
-                    x: 250,
+                    x: 266,
                     y: 500,
                     space: 2,
                 },
@@ -62,14 +62,14 @@
                  {
                     name:'space3',
                     desc:'desc3',
-                    x: 550,
+                    x: 533,
                     y: 500,
                     space: 4,
                 },
                 {
                     name:'space3',
                     desc:'desc3',
-                    x: 700,
+                    x: 666,
                     y: 500,
                     space: 5,
                 },
@@ -78,6 +78,9 @@
                 var spaces = round(random(5))
                 alert("You rolled a " + spaces + "!")
                 currentSpace += spaces
+                if (currentSpace >= 5){
+                    currentSpace-= 5
+                }
                 for (var i = 0;i < gameSpaces.length;i++){
                     if (currentSpace == gameSpaces[i].space){
                         thePlayer.x = gameSpaces[i].x
@@ -89,7 +92,7 @@
                 var theCanvas = createCanvas(800, 600);
                 theCanvas.parent("canvas")
                 rectMode(CENTER)
-                thePlayer = new player(100,500)
+                thePlayer = new player(133,500)
             }
 
             function draw() {
