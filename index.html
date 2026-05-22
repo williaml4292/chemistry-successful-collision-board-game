@@ -36,19 +36,40 @@
             }
             var turn = 0;
             var thePlayer
+            var currentSpace = 1;
             var spaces = [
                 {
-                    name: 'space1',
-                    desc: "desc1",
+                    name:"spawn",
+                    desc: "You've reached spawn!",
+                    x: 100,
+                    y:500,
+                    space: 1,
                 },
                 {
-                    name:'space2',
-                    desc:'desc2'
+                    name: 'space2',
+                    desc: "desc2",
+                    x: 250,
+                    y: 500,
+                    space: 2
+                },
+                {
+                    name:'space3',
+                    desc:'desc3',
+                    x: 400,
+                    y: 500,
+                    space: 3,
                 }
             ]
             function mousePressed(){
                 var spaces = round(random(5))
                 alert("You rolled a " + spaces + "!")
+                currentSpace += spaces
+                spaces.forEach(function(space){
+                    if (currentSpace == space.space){
+                        thePlayer.x = space.x
+                        thePlayer.y = space.y
+                    }
+                })
             }
             function setup() {
                 var theCanvas = createCanvas(800, 600);
@@ -58,7 +79,11 @@
             }
 
             function draw() {
-                background(200)
+                background(0)
+                spaces.forEach(function(space){
+                    fill(0,0,255)
+                    rect(space.x,space.y, 100)
+                })
                 thePlayer.make()
             }
 
