@@ -64,19 +64,12 @@
                 var spaces = round(random(5))
                 alert("You rolled a " + spaces + "!")
                 currentSpace += spaces
-                for (var i = 0;i < spaces.length;i++){
-                    if (currentSpace == spaces[i].space){
-                        thePlayer.x = spaces[i].x
-                        thePlayer.y = spaces[i].y
+                for (var i = 0;i < gameSpaces.length;i++){
+                    if (currentSpace == gameSpaces[i].space){
+                        thePlayer.x = gameSpaces[i].x
+                        thePlayer.y = gameSpaces[i].y
                     }
                 }
-                console.log(spaces[0].space)
-                // spaces.forEach(function(space){
-                //     if (currentSpace == space.space){
-                //         thePlayer.x = space.x
-                //         thePlayer.y = space.y
-                //     }
-                // })
             }
             function setup() {
                 var theCanvas = createCanvas(800, 600);
@@ -87,7 +80,7 @@
 
             function draw() {
                 background(0)
-                spaces.forEach(function(space){
+                gameSpaces.forEach(function(space){
                     fill(0,0,255)
                     rect(space.x,space.y, 100)
                 })
