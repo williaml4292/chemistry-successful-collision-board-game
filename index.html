@@ -40,7 +40,7 @@
             var gameSpaces = [
                 {
                     name:"spawn",
-                    desc: "You've reached spawn!",
+                    desc: "desc1",
                     x: 133,
                     y: 500,
                     space: 1,
@@ -60,26 +60,89 @@
                     space: 3,
                 },
                  {
-                    name:'space3',
-                    desc:'desc3',
+                    name:'space4',
+                    desc:'desc4',
                     x: 533,
                     y: 500,
                     space: 4,
                 },
                 {
-                    name:'space3',
-                    desc:'desc3',
+                    name:'space5',
+                    desc:'desc5',
                     x: 666,
                     y: 500,
                     space: 5,
+                },
+                {
+                    name:'space6',
+                    desc:'desc6',
+                    x: 666,
+                    y: 367,
+                    space: 6,
+                },
+                {
+                    name:'space7',
+                    desc:'desc7',
+                    x: 666,
+                    y: 234,
+                    space: 7,
+                },
+                {
+                    name:'space8',
+                    desc:'desc8',
+                    x: 666,
+                    y: 101,
+                    space: 8,
+                },
+                {
+                    name:'space9',
+                    desc:'desc9',
+                    x: 533,
+                    y: 101,
+                    space: 9,
+                },
+                {
+                    name:'space10',
+                    desc:'desc10',
+                    x: 400,
+                    y: 101,
+                    space: 10,
+                },
+                {
+                    name:'space11',
+                    desc:'desc11',
+                    x: 267,
+                    y: 101,
+                    space: 11,
+                },
+                {
+                    name:'space12',
+                    desc:'desc12',
+                    x: 134,
+                    y: 101,
+                    space: 12,
+                },
+                {
+                    name:'space13',
+                    desc:'desc13',
+                    x: 134,
+                    y: 234,
+                    space: 13,
+                },
+                {
+                    name:'space14',
+                    desc:'desc14',
+                    x: 134,
+                    y: 367,
+                    space: 14,
                 },
             ]
             function mousePressed(){
                 var spaces = round(random(5))
                 alert("You rolled a " + spaces + "!")
                 currentSpace += spaces
-                if (currentSpace > 5){
-                    currentSpace-= 5
+                if (currentSpace > 14){
+                    currentSpace-= 14
                 }
                 for (var i = 0;i < gameSpaces.length;i++){
                     if (currentSpace == gameSpaces[i].space){
