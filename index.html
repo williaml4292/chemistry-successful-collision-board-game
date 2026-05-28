@@ -235,7 +235,10 @@
                     rect(gameSpaces[i].x,gameSpaces[i].y, 100)
                 }
                 thePlayer.make()
-
+                if (currentSpace != 1){
+                    textSize(25)
+                    text("Collide here!",133,500,125,200)
+                }
                 if (win == true){
                     fill(0,255,0)
                     textSize(50)
