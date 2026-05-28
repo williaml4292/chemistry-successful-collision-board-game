@@ -177,6 +177,7 @@
                 currentSpace += spaces
                 if (currentSpace > 14){
                     currentSpace-= 14
+                    pity++
                 }
                 for (var i = 0;i < gameSpaces.length;i++){
                     if (currentSpace == gameSpaces[i].space){
@@ -188,6 +189,7 @@
                                 orientation = "Correct"
                             }
                             else if (orientation == "Correct"){
+                                if(random(pity + 10) < 10)
                                 orientation = "Wrong"
                             }
                         }
@@ -205,7 +207,8 @@
             var temperature;
             var orientation = "Wrong"
             var orientationText;
-            var win = false
+            var pity = 0;
+            var win = false;
 
             function setup() {
                 var theCanvas = createCanvas(800, 600);
