@@ -216,12 +216,6 @@
             }
 
             function draw() {
-                if (win == true){
-                    fill(0,255,0)
-                    textSize(25)
-                    text("You won!",width/2,height/2)
-                    console.log("true")
-                }
                 noStroke()
                 temperature = initial + " °C" + " / 100  °C."
                 orientationText = orientation + " orientation."
@@ -233,6 +227,13 @@
                     rect(space.x,space.y, 100)
                 })
                 thePlayer.make()
+
+                if (win == true){
+                    fill(0,255,0)
+                    textSize(50)
+                    text("You won!",width/2,height/2)
+                    console.log("true")
+                }
             }
 
         </script>
