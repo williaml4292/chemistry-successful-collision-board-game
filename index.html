@@ -225,10 +225,15 @@
                 document.getElementById('temperature').innerHTML = temperature
                 document.getElementById('orientation').innerHTML = orientationText
                 background(0)
-                gameSpaces.forEach(function(space){
-                    fill(0,0,255)
-                    rect(space.x,space.y, 100)
-                })
+                for (var i = 0;i < gameSpaces.length;i++){
+                    if(!gameSpaces[i].changeO){
+                        fill(0, 0, 255)
+                    }
+                    else { // changeO = true
+                        fill(175, 175, 255)
+                    }
+                    rect(gameSpaces[i].x,gameSpaces[i].y, 100)
+                }
                 thePlayer.make()
 
                 if (win == true){
