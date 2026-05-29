@@ -55,7 +55,7 @@
                 },
                 {
                     name: 'space2',
-                    desc: "desc2",
+                    desc: "So close!",
                     x: 266,
                     y: 500,
                     space: 2,
@@ -64,7 +64,7 @@
                 },
                 {
                     name:'space3',
-                    desc:'desc3',
+                    desc:"That was close to hitting!",
                     x: 400,
                     y: 500,
                     space: 3,
@@ -73,7 +73,7 @@
                 },
                  {
                     name:'space4',
-                    desc:'desc4',
+                    desc:"You missed the other molecule.",
                     x: 533,
                     y: 500,
                     space: 4,
@@ -82,7 +82,7 @@
                 },
                 {
                     name:'space5',
-                    desc:'desc5',
+                    desc:"You missed the other molecule.",
                     x: 666,
                     y: 500,
                     space: 5,
@@ -91,7 +91,7 @@
                 },
                 {
                     name:'space6',
-                    desc:'desc6',
+                    desc: "The molecule is nowhere nearby.",
                     x: 666,
                     y: 367,
                     space: 6,
@@ -100,7 +100,7 @@
                 },
                 {
                     name:'space7',
-                    desc:'desc7',
+                    desc:'You are getting closer to the molecule.',
                     x: 666,
                     y: 234,
                     space: 7,
@@ -109,7 +109,7 @@
                 },
                 {
                     name:'space8',
-                    desc:'desc8',
+                    desc:'You are getting closer to the molecule',
                     x: 666,
                     y: 101,
                     space: 8,
@@ -118,7 +118,7 @@
                 },
                 {
                     name:'space9',
-                    desc:'desc9',
+                    desc:'The molecule is getting closer.',
                     x: 533,
                     y: 101,
                     space: 9,
@@ -127,7 +127,7 @@
                 },
                 {
                     name:'space10',
-                    desc:'desc10',
+                    desc:'The molecule is getting closer',
                     x: 400,
                     y: 101,
                     space: 10,
@@ -136,7 +136,7 @@
                 },
                 {
                     name:'space11',
-                    desc:'desc11',
+                    desc:'The other molecule is nearby.',
                     x: 267,
                     y: 101,
                     space: 11,
@@ -145,7 +145,7 @@
                 },
                 {
                     name:'space12',
-                    desc:'desc12',
+                    desc:'You are close to the other molecule.',
                     x: 134,
                     y: 101,
                     space: 12,
@@ -154,7 +154,7 @@
                 },
                 {
                     name:'space13',
-                    desc:'desc13',
+                    desc:'You are really close to the other molecule!',
                     x: 134,
                     y: 234,
                     space: 13,
@@ -163,7 +163,7 @@
                 },
                 {
                     name:'space14',
-                    desc:'desc14',
+                    desc:'You are about to collide with the molecule!',
                     x: 134,
                     y: 367,
                     space: 14,
@@ -178,6 +178,7 @@
                 if (currentSpace > 14){
                     currentSpace-= 14
                     pity++
+                    console.log(`current pity: ${pity}`)
                 }
                 for (var i = 0;i < gameSpaces.length;i++){
                     if (currentSpace == gameSpaces[i].space){
@@ -189,7 +190,7 @@
                                 orientation = "Correct"
                             }
                             else if (orientation == "Correct"){
-                                if(random(pity + 10) < 10)
+                                if(random(pity + 6) < 7)
                                 orientation = "Wrong"
                             }
                         }
