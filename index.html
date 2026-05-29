@@ -46,16 +46,16 @@
             var gameSpaces = [
                 {
                     name:"spawn",
-                    desc: "You've reached spawn!",
+                    desc: "You tried to collide!",
                     x: 133,
                     y: 500,
                     space: 1,
-                    changeT: 10,
+                    changeT: 0,
                     changeO: false,
                 },
                 {
                     name: 'space2',
-                    desc: "So close!",
+                    desc: "You ran into a glacier!",
                     x: 266,
                     y: 500,
                     space: 2,
@@ -64,16 +64,16 @@
                 },
                 {
                     name:'space3',
-                    desc:"That was close to hitting!",
+                    desc:"Global warming.exe happened.",
                     x: 400,
                     y: 500,
                     space: 3,
-                    changeT: 7,
+                    changeT: 10,
                     changeO: false,
                 },
                  {
                     name:'space4',
-                    desc:"You missed the other molecule.",
+                    desc:"Global warming.exe happened.",
                     x: 533,
                     y: 500,
                     space: 4,
@@ -82,7 +82,7 @@
                 },
                 {
                     name:'space5',
-                    desc:"You missed the other molecule.",
+                    desc:"You ran into a wall. That hurts.",
                     x: 666,
                     y: 500,
                     space: 5,
@@ -91,7 +91,7 @@
                 },
                 {
                     name:'space6',
-                    desc: "The molecule is nowhere nearby.",
+                    desc: "Wait why is there ice here?",
                     x: 666,
                     y: 367,
                     space: 6,
@@ -100,7 +100,7 @@
                 },
                 {
                     name:'space7',
-                    desc:'You are getting closer to the molecule.',
+                    desc:"It's so hot here!",
                     x: 666,
                     y: 234,
                     space: 7,
@@ -109,7 +109,7 @@
                 },
                 {
                     name:'space8',
-                    desc:'You are getting closer to the molecule',
+                    desc:'Global warming.exe happened.',
                     x: 666,
                     y: 101,
                     space: 8,
@@ -118,7 +118,7 @@
                 },
                 {
                     name:'space9',
-                    desc:'The molecule is getting closer.',
+                    desc:"Where am I right now? Oh right, I'm in the Arctic Ocean. Wait what?",
                     x: 533,
                     y: 101,
                     space: 9,
@@ -127,7 +127,7 @@
                 },
                 {
                     name:'space10',
-                    desc:'The molecule is getting closer',
+                    desc:'The sun is out today.',
                     x: 400,
                     y: 101,
                     space: 10,
@@ -136,7 +136,7 @@
                 },
                 {
                     name:'space11',
-                    desc:'The other molecule is nearby.',
+                    desc:'Stop running into glaciers!',
                     x: 267,
                     y: 101,
                     space: 11,
@@ -145,7 +145,7 @@
                 },
                 {
                     name:'space12',
-                    desc:'You are close to the other molecule.',
+                    desc:'You hit a wall. Great job.',
                     x: 134,
                     y: 101,
                     space: 12,
@@ -154,7 +154,7 @@
                 },
                 {
                     name:'space13',
-                    desc:'You are really close to the other molecule!',
+                    desc:'A volcano erupted on you. Seriously, why are you on top of one?',
                     x: 134,
                     y: 234,
                     space: 13,
@@ -163,7 +163,7 @@
                 },
                 {
                     name:'space14',
-                    desc:'You are about to collide with the molecule!',
+                    desc:'You were blown away by a current.',
                     x: 134,
                     y: 367,
                     space: 14,
@@ -190,13 +190,32 @@
                                 orientation = "Correct"
                             }
                             else if (orientation == "Correct"){
-                                if(random(pity + 6) < 7)
-                                orientation = "Wrong"
+                                if(random(pity + 6) < 7){
+                                    orientation = "Wrong"
+                                }
+                                else{
+                                    gameSpaces[i].desc = "Nothing happened."
+                                }
                             }
                         }
-                        if (gameSpaces[i].name == "spawn" && initial >= 100 && orientation == "Correct"){
-                            win = true
-                            alert("You won and successfully collided!")
+                        // if (gameSpaces[i].name == "spawn" && initial >= 100 && orientation == "Correct"){
+                        //     win = true
+                        //     alert("You won and successfully collided!")
+                        // }
+                        if (gameSpaces[i].name == "spawn"){
+                            if (initial >= 100 && orientation == "Correct"){
+                                 win = true
+                                 alert("You won and successfully collided!")
+                            }
+                            else if (initial < 100 && orientation == "Wrong"){
+                                 alert("You collided... but you were both too slow and were orientated wrongly.")
+                            }
+                            else if (initial >= 100 && orientation == "Wrong"){
+                                 alert("You collided... but you were orientated wrongly.")
+                            }
+                            else if (initial < 100 && orientation == "Correct"){
+                                 alert("You collided... but you were too slow.")
+                            }
                         }
                         else{
                             alert(gameSpaces[i].desc)
@@ -204,9 +223,9 @@
                     }
                 }
             }
-            var initial = 25
+            var initial = 25;
             var temperature;
-            var orientation = "Wrong"
+            var orientation = "Wrong";
             var orientationText;
             var pity = 0;
             var win = false;
@@ -244,7 +263,6 @@
                     fill(0,255,0)
                     textSize(50)
                     text("You won!",width/2,height/2)
-                    console.log("true")
                 }
             }
 
