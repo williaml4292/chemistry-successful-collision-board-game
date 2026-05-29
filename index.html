@@ -19,7 +19,7 @@
         <div style = "display: flex">
             <div id = "canvas"></div>
             <div>
-                <h1>Click to roll a dice.</h1>
+                <h1 id = "Instructions"></h1>
                 <h1 id = "temperature"></h1>
                 <h1 id = "orientation"></h1>
 
@@ -236,12 +236,15 @@
                 rectMode(CENTER)
                 thePlayer = new player(133,500)
                 textAlign(CENTER,CENTER)
+                alert("In this game, the goal is to successfully collide with another molecule.")
+                alert("To do this, you must have enough speed (100 °C) and the correct orientation.")
             }
 
             function draw() {
                 noStroke()
                 temperature = initial + " °C" + " / 100  °C."
                 orientationText = orientation + " orientation."
+                document.getElementById('Instructions').innerHTML = "Click to roll a dice."
                 document.getElementById('temperature').innerHTML = temperature
                 document.getElementById('orientation').innerHTML = orientationText
                 background(0)
